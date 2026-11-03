@@ -2,11 +2,11 @@ cask "yt-downloader" do
   version "4.4.0"
 
   on_arm do
-    sha256 "SHA256_FOR_ARM64_DMG"
+    sha256 "9c78da9154ccaf59493d6bdf1409ffd53eb6020d009eecc0d484cf46189ad339"
     url "https://github.com/Shawshank01/yt-downloader-electron/releases/download/v#{version}/YT-Downloader-mac-arm64-#{version}.dmg"
   end
   on_intel do
-    sha256 "SHA256_FOR_X64_DMG"
+    sha256 "5da88c857330491ae75ae970a06eacacf8b9b6ab832a95c8e67674eaac5f7d72"
     url "https://github.com/Shawshank01/yt-downloader-electron/releases/download/v#{version}/YT-Downloader-mac-x64-#{version}.dmg"
   end
 
