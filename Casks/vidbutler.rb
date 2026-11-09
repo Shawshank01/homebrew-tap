@@ -1,12 +1,12 @@
 cask "vidbutler" do
-  version "4.6.0"
+  version "5.0.0"
 
   on_arm do
-    sha256 "f5c2a2348795264c7afa7b9e6757cf0d0b6e8cfefb143e9fc46dbb9e7502f6d0"
+    sha256 "3ff9387753bab58f7707dd09c214512a4ca5b68c204811a89e8ab75c18ed9c76"
     url "https://github.com/Shawshank01/Vidbutler/releases/download/v#{version}/VidButler-mac-arm64-#{version}.dmg"
   end
   on_intel do
-    sha256 "d7321ff613001e9562735555385cbbe8e16c8598416f8a157da08195c70598e6"
+    sha256 "0bb5cf94bcb48159617e3bb35b9fc39dc13b4d5ed6b735aba63076301e538222"
     url "https://github.com/Shawshank01/Vidbutler/releases/download/v#{version}/VidButler-mac-x64-#{version}.dmg"
   end
 
@@ -16,16 +16,15 @@ cask "vidbutler" do
 
   app "VidButler.app"
 
-  # Automatically strips quarantine upon installation
+  # VidButler is not notarized. Tap installations remove the downloaded quarantine
+  # attribute so users do not need to run xattr manually.
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/VidButler.app"]
+    run "/usr/bin/xattr",
+args: ["-dr", "com.apple.quarantine", "{{appdir}}/VidButler.app"]
   end
 
   zap trash: [
     "~/Library/Application Support/VidButler",
     "~/Library/Preferences/com.vidbutler.app.plist",
-    # Legacy cleanups for migrating users:
-    "~/Library/Application Support/yt-downloader-electron",
-    "~/Library/Preferences/com.ytdownloader.app.plist",
   ]
 end
