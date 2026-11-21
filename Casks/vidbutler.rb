@@ -1,12 +1,12 @@
 cask "vidbutler" do
-  version "5.1.0"
+  version "5.1.1"
 
   on_arm do
-    sha256 "caac0dd3c16d5bc9f012d145a71d0988af6466bed1cb18b6d773b025ab1f78c9"
+    sha256 "4d4e6363e6f6c065791609a1e0cef87b04979c2e8c166c9354fa8e35ceee113d"
     url "https://github.com/Shawshank01/VidButler/releases/download/v#{version}/VidButler-mac-arm64-#{version}.dmg"
   end
   on_intel do
-    sha256 "102cb1f4bb530ca3c5ea99634cf48a0032457207380563fc715998f4d58f89bc"
+    sha256 "545718fd365a86ff7dab0e9aac8e207aa31d16dd33a9de13bc2b525182944ac9"
     url "https://github.com/Shawshank01/VidButler/releases/download/v#{version}/VidButler-mac-x64-#{version}.dmg"
   end
 
